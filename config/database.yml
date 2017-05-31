@@ -1,0 +1,23 @@
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 917382
+  host: localhost
+  port: 5432
+  poll: 5
+
+development:
+  <<: *default
+  database: novo_prato_development
+
+  
+test:
+  <<: *default
+  database: novo_prato_test
+
+production:
+  <<: *default
+  database: novo_prato_production
+ 

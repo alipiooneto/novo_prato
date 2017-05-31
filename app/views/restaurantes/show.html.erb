@@ -1,0 +1,17 @@
+<h2> Controle de Restaurantes</h2>
+<table border="1">
+  <tr>
+  	<th>ID</th>
+  	<th>Nome</th>
+  	<th>Endereco</th>
+  </tr>
+    <tr>
+	  <td><%= @restaurante.id %></td>
+	  <td><%= @restaurante.nome %></td>
+	  <td><%= @restaurante.endereco %></td>
+	</tr>	
+</table>
+
+  <%= link_to "Alterar", action: 'edit', id:@restaurante %>
+  <%= link_to 'Voltar', action: 'index' %>
+
