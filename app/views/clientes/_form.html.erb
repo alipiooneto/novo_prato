@@ -1,0 +1,16 @@
+<h2> Manutencao de Clientes</h2>
+<% if @cliente.errors.any? %>
+	<ul>
+	   <% @cliente.errors.full_messages.each do |msg| %>
+	     <li> <%= msg %><li/>
+	   <% end %>  	
+	</ul>
+<% end %>
+
+	<%= form_for @cliente do |f| %>
+		Nome: <%=  f.text_field :nome %><br/>
+		Idade: <%= f.text_field :idade %><br/>
+		<%= f.submit "Gravar" %>
+	<% end %>
+
+<%= link_to 'Voltar', clientes_path %>
