@@ -1,0 +1,33 @@
+
+<h2>Controle de Qualificacoes</h2>
+<p id="notice"><%= notice %></p>
+
+
+<table border="2" bordercolor="blue" bgcolor=#F3F781>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Restaurante</th>
+      <th>Nota</th>
+      <th>Valor gasto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualificacoes.each do |qualificacao| %>
+      <tr>
+        <td width=200px><%= qualificacao.cliente.nome %></td>
+        <td width=200px><%= qualificacao.restaurante.nome %></td>
+        <td width = 50px ><%= qualificacao.nota %></td>
+        <td width = 80x ><%= qualificacao.valor_gasto %></td>
+        <td><%= link_to 'Editar', edit_qualificacao_path(qualificacao) %></td>
+        <td><%= link_to 'Deletar', qualificacao, method: :delete, data: { confirm: 'Confirma S/N?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova', new_qualificacao_path %>

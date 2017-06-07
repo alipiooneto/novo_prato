@@ -13,7 +13,8 @@ class RestaurantesController < ApplicationController
 	#end
 
 	def index
-		@restaurantes = Restaurante.order :nome
+		#@restaurantes = Restaurante.order :nome
+		@restaurantes = Restaurante.order :id
 
 		  respond_to do |format|
 		    format.html

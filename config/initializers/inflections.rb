@@ -19,3 +19,8 @@
 #   	inflect.irregular 'qualificacao', 'qualificacoes'
 #
 #end
+ ActiveSupport::Inflector.inflections(:en) do |inflect|
+   inflect.acronym 'RESTful'
+   inflect.irregular 'qualificacao', 'qualificacoes'
+   inflect.irregular 'receita', 'receitas'
+ end
