@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h2> Qualificacoes</h2>
+<table border="1">
+  <tr>
+  	<th>ID</th>
+  	<th>cliente</th>
+  	<th>Qualificacao</th>
+  	<th>Nota</th>
+    <th>Valor Gasto</th>
+  </tr>
+    <tr>
+    <td><%= @qualificacao.id %></td>
+    <td><%= @qualificacao.cliente_id %></td>
+	  <td><%= @qualificacao.restaurante_id %></td>
+	  <td><%= @qualificacao.nota  %></td>
+	  <td><%= @qualificacao.valor_gasto %></td>
+	</tr>	
+</table>
+  <%= comentarios @qualificacao %>
+  <%= novo_comentario @qualificacao %>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @qualificacao.cliente_id %>
-</p>
-
-<p>
-  <strong>Restaurante:</strong>
-  <%= @qualificacao.restaurante_id %>
-</p>
-
-<p>
-  <strong>Nota:</strong>
-  <%= @qualificacao.nota %>
-</p>
-
-<p>
-  <strong>Valor gasto:</strong>
-  <%= @qualificacao.valor_gasto %>
-</p>
-
-<%= link_to 'Edit', edit_qualificacao_path(@qualificacao) %> |
-<%= link_to 'Back', qualificacoes_path %>
+  <%= link_to "Alterar", action: 'edit', id:@qualificacao %>
+  <%= link_to 'Voltar', action: 'index' %>
+ 

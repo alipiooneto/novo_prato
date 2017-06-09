@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606161023) do
+ActiveRecord::Schema.define(version: 20170609220138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20170606161023) do
     t.string "idade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.text "conteudo"
+    t.integer "comentavel_id"
+    t.string "comentavel_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comentavel_id"], name: "index_comentarios_on_comentavel_id"
+    t.index ["comentavel_type"], name: "index_comentarios_on_comentavel_type"
   end
 
   create_table "pratos", force: :cascade do |t|
@@ -55,6 +65,10 @@ ActiveRecord::Schema.define(version: 20170606161023) do
     t.string "especialidade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "foto_file_name"
+    t.string "foto_content_type"
+    t.integer "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
 end

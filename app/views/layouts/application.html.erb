@@ -10,13 +10,21 @@
   </head>
 
   <body>
+  <h2>Restaurantes</h2>
     <ul>
       <% %w[clientes qualificacoes restaurantes].each do |controller_name| %>
         <li>
           <%= link_to controller_name, controller: controller_name %>
         </li>
       <% end %>
+      <!--%= menu_principal %w(restaurantes clientes qualificacoes) %-->
+      
     </ul>
  <%= yield %>
+
+ <script>
+  <%= yield :js %>
+ </script>
+
   </body>
 </html>

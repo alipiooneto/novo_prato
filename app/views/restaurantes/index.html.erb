@@ -1,6 +1,5 @@
 
-<h1>Listagem de Restaurantes</h1><br/> 
-
+<h3>Controle de Restaurantes</h3><br/> 
 
 <table border = "2", bordercolor="blue", bgcolor= #F3F781>
   <tr>
@@ -16,11 +15,13 @@
     <td width=200px><i><b><%= restaurante.nome %></b></i></td>
     <td width=200><%= restaurante.endereco %></td>
     <td width=150px><%= restaurante.especialidade %></td>
-    <!--td><%= link_to "Mostrar", action: 'show', id: restaurante %></td-->
+    <td><%= link_to "Mostrar", action: 'show', id: restaurante %></td>
     <td><%= link_to 'Alterar', action: 'edit', id:restaurante %></td>
  <!--   <td><%= link_to 'Deletar', {backcolor: 'red' ,  action: 'destroy', id: restaurante},{method: "delete"}  %> -->
   </tr>
 <% end %>
 
 </table>
-    <%= link_to "Novo", action: 'new' %><br/>
+<%= paginate @restaurantes %>
+
+<%= link_to "Novo", action: 'new' %><br/>

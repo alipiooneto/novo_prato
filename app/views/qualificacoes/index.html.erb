@@ -1,5 +1,5 @@
 
-<h2>Controle de Qualificacoes</h2>
+<h3>Controle de Qualificacoes</h3>
 <p id="notice"><%= notice %></p>
 
 
@@ -22,6 +22,7 @@
         <td width = 50px ><%= qualificacao.nota %></td>
         <!--td width = 80x ><%= qualificacao.valor_gasto %></td-->
         <td width = 80x ><%= valor_formatado(qualificacao.valor_gasto) %></td-->
+        <td><%= link_to "Mostrar", action: 'show', id: qualificacao %></td>
         <td><%= link_to 'Editar', edit_qualificacao_path(qualificacao) %></td>
         <td><%= link_to 'Deletar', qualificacao, method: :delete, data: { confirm: 'Confirma S/N?' } %></td>
       </tr>

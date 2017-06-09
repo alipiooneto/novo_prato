@@ -9,9 +9,17 @@
 	  <td><%= @restaurante.id %></td>
 	  <td><%= @restaurante.nome %></td>
 	  <td><%= @restaurante.endereco %></td>
+    <p>
+  <!--b>Foto:</b>
+    <%= image_tag @restaurante.foto.url(:thumb) %>
+</p-->
+
 	</tr>	
 </table>
 
   <%= link_to "Alterar", action: 'edit', id:@restaurante %>
   <%= link_to 'Voltar', action: 'index' %>
+  <%= comentarios @restaurante %>
+  <%= novo_comentario @restaurante %>
+  
 
