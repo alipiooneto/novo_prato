@@ -20,7 +20,8 @@
         <td width=200px><%= qualificacao.cliente.nome %></td>
         <td width=200px><%= qualificacao.restaurante.nome %></td>
         <td width = 50px ><%= qualificacao.nota %></td>
-        <td width = 80x ><%= qualificacao.valor_gasto %></td>
+        <!--td width = 80x ><%= qualificacao.valor_gasto %></td-->
+        <td width = 80x ><%= valor_formatado(qualificacao.valor_gasto) %></td-->
         <td><%= link_to 'Editar', edit_qualificacao_path(qualificacao) %></td>
         <td><%= link_to 'Deletar', qualificacao, method: :delete, data: { confirm: 'Confirma S/N?' } %></td>
       </tr>

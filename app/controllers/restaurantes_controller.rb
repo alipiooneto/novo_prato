@@ -12,10 +12,19 @@ class RestaurantesController < ApplicationController
 	#    end
 	#end
 
+	# GET /restaurantes
+  	# GET /restaurantes.xml
+
+
+	respond_to :html, :xml
+
+
 	def index
 		#@restaurantes = Restaurante.order :nome
 		@restaurantes = Restaurante.order :id
 
+		#respond_with @restaurantes
+		
 		  respond_to do |format|
 		    format.html
 		    format.xml {render xml: @restaurantes}
@@ -24,8 +33,11 @@ class RestaurantesController < ApplicationController
     end
 
 
+
 	def show
-        @restaurante = Restaurante.find(params[:id])		
+        @restaurante = Restaurante.find(params[:id])	
+
+        respond_with @restaurantes	
 	end
 
 	def destroy
@@ -37,6 +49,7 @@ class RestaurantesController < ApplicationController
 
 	def new
 	   @restaurante = Restaurante.new
+	   respond_with @restaurantes
 	end
 
 	def create
@@ -59,6 +72,7 @@ class RestaurantesController < ApplicationController
 
 	def edit
 		@restaurante = Restaurante.find(params[:id])
+		respond_with @restaurantes
 	end
 
 	def update
